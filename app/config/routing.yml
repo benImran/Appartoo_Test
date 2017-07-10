@@ -1,0 +1,5 @@
+bonobo:
+    resource: "@BonoboBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
