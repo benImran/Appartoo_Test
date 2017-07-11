@@ -24,11 +24,12 @@ class BonoboFriendsController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $bonoboFriends = $em->getRepository('BonoboBundle:BonoboFriends')->findAll();
+        $bonoboFriends = $em->getRepository('BonoboBundle:BonoboFriends')
+            ->findAll();
 
-        return $this->render('bonobofriends/index.html.twig', array(
-            'bonoboFriends' => $bonoboFriends,
-        ));
+        return $this->render('bonobofriends/index.html.twig', [
+            'bonoboFriends' => $bonoboFriends
+        ]);
     }
 
     /**
@@ -48,13 +49,15 @@ class BonoboFriendsController extends Controller
             $em->persist($bonoboFriend);
             $em->flush();
 
-            return $this->redirectToRoute('bonobofriends_show', array('id' => $bonoboFriend->getId()));
+            return $this->redirectToRoute('bonobofriends_show', [
+                'id' => $bonoboFriend->getId()
+            ]);
         }
 
-        return $this->render('bonobofriends/new.html.twig', array(
+        return $this->render('bonobofriends/new.html.twig', [
             'bonoboFriend' => $bonoboFriend,
             'form' => $form->createView(),
-        ));
+        ]);
     }
 
     /**
@@ -67,12 +70,11 @@ class BonoboFriendsController extends Controller
     {
         $deleteForm = $this->createDeleteForm($bonoboFriend);
 
-        return $this->render('bonobofriends/show.html.twig', array(
+        return $this->render('bonobofriends/show.html.twig', [
             'bonoboFriend' => $bonoboFriend,
-            'delete_form' => $deleteForm->createView(),
-        ));
+            'delete_form' => $deleteForm->createView()
+        ]);
     }
-
     /**
      * Displays a form to edit an existing bonoboFriend entity.
      *
@@ -88,14 +90,16 @@ class BonoboFriendsController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('bonobofriends_edit', array('id' => $bonoboFriend->getId()));
+            return $this->redirectToRoute('bonobofriends_edit', [
+                'id' => $bonoboFriend->getId()
+            ]);
         }
 
-        return $this->render('bonobofriends/edit.html.twig', array(
+        return $this->render('bonobofriends/edit.html.twig', [
             'bonoboFriend' => $bonoboFriend,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+            'delete_form' => $deleteForm->createView()
+        ]);
     }
 
     /**
@@ -128,7 +132,9 @@ class BonoboFriendsController extends Controller
     private function createDeleteForm(BonoboFriends $bonoboFriend)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('bonobofriends_delete', array('id' => $bonoboFriend->getId())))
+            ->setAction($this->generateUrl('bonobofriends_delete', [
+                'id' => $bonoboFriend->getId()
+            ]))
             ->setMethod('DELETE')
             ->getForm()
         ;

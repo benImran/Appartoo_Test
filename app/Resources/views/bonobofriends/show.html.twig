@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bonobofriend</h1>
+    <h1>Amis Bonobos</h1>
 
     <table>
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ bonoboFriend.id }}</td>
-            </tr>
+            {#<tr>#}
+                {#<th>Id</th>#}
+                {#<td>{{ bonoboFriend.id }}</td>#}
+            {#</tr>#}
             <tr>
                 <th>Nom</th>
                 <td>{{ bonoboFriend.nom }}</td>
@@ -38,14 +38,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('bonobofriends_index') }}">Back to the list</a>
+            <a href="{{ path('bonobofriends_index') }}">Retourner à la listes d'amis</a>
         </li>
-        <li>
-            <a href="{{ path('bonobofriends_edit', { 'id': bonoboFriend.id }) }}">Edit</a>
-        </li>
+        {#<li>#}
+            {#<a href="{{ path('bonobofriends_edit', { 'id': bonoboFriend.id }) }}">Modifier</a>#}
+        {#</li>#}
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
     </ul>

@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bonobofriend creation</h1>
+    <h1>Création d'un Bonobo</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Créer" />
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('bonobofriends_index') }}">Back to the list</a>
+            <a href="{{ path('bonobofriends_index') }}">Retourner à la listes d'amis</a>
         </li>
     </ul>
 {% endblock %}

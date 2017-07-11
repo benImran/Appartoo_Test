@@ -21,7 +21,6 @@ security:
             security: false
 
         main:
-            anonymous: ~
             pattern: ^/
             form_login:
                 provider: fos_userbundle

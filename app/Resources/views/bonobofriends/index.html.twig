@@ -1,38 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bonobofriends list</h1>
+    <h1>Liste des Bonobos</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Id</th>
+                {#<th>Id</th>#}
                 <th>Nom</th>
-                <th>Age</th>
-                <th>Famille</th>
-                <th>Race</th>
-                <th>Nourriture</th>
-                <th>User_fk</th>
-                <th>Actions</th>
+                {#<th>Age</th>#}
+                {#<th>Famille</th>#}
+                {#<th>Race</th>#}
+                {#<th>Nourriture</th>#}
+                {#<th>User_fk</th>#}
+                {#<th>Actions</th>#}
             </tr>
         </thead>
         <tbody>
         {% for bonoboFriend in bonoboFriends %}
             <tr>
-                <td><a href="{{ path('bonobofriends_show', { 'id': bonoboFriend.id }) }}">{{ bonoboFriend.id }}</a></td>
+                {#<td><a href="{{ path('bonobofriends_show', { 'id': bonoboFriend.id }) }}">{{ bonoboFriend.id }}</a></td>#}
                 <td>{{ bonoboFriend.nom }}</td>
-                <td>{{ bonoboFriend.age }}</td>
-                <td>{{ bonoboFriend.famille }}</td>
-                <td>{{ bonoboFriend.race }}</td>
-                <td>{{ bonoboFriend.nourriture }}</td>
-                <td>{{ bonoboFriend.userfk }}</td>
+                {#<td>{{ bonoboFriend.age }}</td>#}
+                {#<td>{{ bonoboFriend.famille }}</td>#}
+                {#<td>{{ bonoboFriend.race }}</td>#}
+                {#<td>{{ bonoboFriend.nourriture }}</td>#}
+                {#<td>{{ bonoboFriend.userfk }}</td>#}
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('bonobofriends_show', { 'id': bonoboFriend.id }) }}">show</a>
+                            <a href="{{ path('bonobofriends_show', { 'id': bonoboFriend.id }) }}">Montrer</a>
                         </li>
                         <li>
-                            <a href="{{ path('bonobofriends_edit', { 'id': bonoboFriend.id }) }}">edit</a>
+                            <a href="{{ path('bonobofriends_edit', { 'id': bonoboFriend.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -43,7 +43,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('bonobofriends_new') }}">Create a new bonoboFriend</a>
+            <a href="{{ path('bonobofriends_new') }}">Créer un nouveau Bonobo</a>
         </li>
     </ul>
 {% endblock %}
