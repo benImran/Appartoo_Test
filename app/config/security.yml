@@ -27,14 +27,14 @@ security:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
                 always_use_default_target_path: false
-                default_target_path:            /homepage
+                default_target_path:            /bonobofriends
                 target_path_parameter:          _target_path
                 use_referer:                    false
                 # if you are using Symfony < 2.8, use the following config instead:
                 # csrf_provider: form.csrf_provider
 
             logout:
-                target: /login
+                target: /
             anonymous:    true
 
     access_control:
@@ -42,6 +42,7 @@ security:
         - { path: ^/resetting, role: ROLE_ADMIN }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/bonobofriends/, role: ROLE_USER }
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate

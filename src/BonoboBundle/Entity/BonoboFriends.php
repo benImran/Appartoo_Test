@@ -64,6 +64,31 @@ class BonoboFriends
 
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="user_fk", type="integer")
+     * @ORM\ManyToMany(targetEntity="BonoboBundle\Entity\BonoboUser", cascade={"persist"})
+     */
+    private $user_fk;
+
+    /**
+     * @return int
+     */
+    public function getUserFk()
+    {
+        return $this->user_fk;
+    }
+
+    /**
+     * @param int $user_fk
+     */
+    public function setUserFk($user_fk)
+    {
+        $this->user_fk = $user_fk;
+        return $this;
+    }
+
+    /**
      * Get id
      *
      * @return int

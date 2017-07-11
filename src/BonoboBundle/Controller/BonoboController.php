@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class BonoboController extends Controller
 {
     /**
-     * @Route("/homepage")
+     * @Route("/")
      */
     public function indexAction()
     {

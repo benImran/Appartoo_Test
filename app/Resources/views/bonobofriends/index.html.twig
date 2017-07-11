@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bonobofriends list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Age</th>
+                <th>Famille</th>
+                <th>Race</th>
+                <th>Nourriture</th>
+                <th>User_fk</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bonoboFriend in bonoboFriends %}
+            <tr>
+                <td><a href="{{ path('bonobofriends_show', { 'id': bonoboFriend.id }) }}">{{ bonoboFriend.id }}</a></td>
+                <td>{{ bonoboFriend.nom }}</td>
+                <td>{{ bonoboFriend.age }}</td>
+                <td>{{ bonoboFriend.famille }}</td>
+                <td>{{ bonoboFriend.race }}</td>
+                <td>{{ bonoboFriend.nourriture }}</td>
+                <td>{{ bonoboFriend.userfk }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bonobofriends_show', { 'id': bonoboFriend.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bonobofriends_edit', { 'id': bonoboFriend.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bonobofriends_new') }}">Create a new bonoboFriend</a>
+        </li>
+    </ul>
+{% endblock %}
